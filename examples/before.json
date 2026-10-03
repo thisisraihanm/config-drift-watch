@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "host": "LAB-PC-01",
+  "platform": "windows",
+  "timestamp": "2026-10-02T06:00:00Z",
+  "service_scope": [
+    "Dnscache",
+    "Spooler",
+    "W32Time"
+  ],
+  "coverage": {
+    "interfaces": "ok",
+    "dns": "ok",
+    "firewall": "ok",
+    "services": "ok"
+  },
+  "errors": [],
+  "interfaces": {
+    "lab-adapter-guid": {
+      "alias": "Ethernet",
+      "status": "Up",
+      "ipv4": [
+        "192.0.2.20/24"
+      ],
+      "default_routes": [
+        {
+          "destination": "0.0.0.0/0",
+          "next_hop": "192.0.2.1",
+          "metric": 10
+        }
+      ]
+    }
+  },
+  "dns": {
+    "lab-adapter-guid": {
+      "2": [
+        "192.0.2.53",
+        "192.0.2.54"
+      ],
+      "23": []
+    }
+  },
+  "firewall": {
+    "Domain": {
+      "enabled": "True"
+    },
+    "Private": {
+      "enabled": "True"
+    },
+    "Public": {
+      "enabled": "True"
+    }
+  },
+  "services": {
+    "Dnscache": {
+      "state": "Running",
+      "start_mode": "Auto"
+    },
+    "Spooler": {
+      "state": "Running",
+      "start_mode": "Auto"
+    },
+    "W32Time": {
+      "state": "Running",
+      "start_mode": "Auto"
+    }
+  }
+}

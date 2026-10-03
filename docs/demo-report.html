@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Config Drift Watch</title><style>
+body{font:16px/1.6 system-ui,sans-serif;background:#f5f7fb;color:#16283c;margin:0}
+main{max-width:1100px;margin:40px auto;padding:28px;background:white;border-radius:12px}
+h1{line-height:1.2}.summary{padding:16px;background:#e9f0fa;border-left:4px solid #2865b0}
+table{border-collapse:collapse;width:100%;margin-top:24px}th,td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #d9e2ec;overflow-wrap:anywhere}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}details{margin-top:24px}
+@media(max-width:700px){main{margin:0;padding:16px}table{display:block;overflow-x:auto}}
+</style><main><p>LOCAL OPERATIONS REPORT · 2026-10-03T06:36:54.702422+00:00</p><h1>Config Drift Watch</h1>
+<p class="summary"><strong>drift</strong> — 3 observed changes. Change is evidence, not proof of misconfiguration.</p>
+<table><thead><tr><th>Status</th><th>Item</th><th>Evidence</th><th>Next step</th></tr></thead><tbody><tr><td>review</td><td>dns/lab-adapter-guid/2</td><td>changed: [&quot;192.0.2.53&quot;, &quot;192.0.2.54&quot;] → [&quot;192.0.2.54&quot;, &quot;192.0.2.53&quot;]</td><td>Check whether resolver addresses and order match the intended network or VPN. Confirm against a change ticket before reverting.</td></tr><tr><td>review</td><td>firewall/Private/enabled</td><td>changed: &quot;True&quot; → &quot;False&quot;</td><td>Review the intended profile policy and effective GPO. This snapshot covers profile enabled state, not individual firewall rules.</td></tr><tr><td>review</td><td>services/Spooler/state</td><td>changed: &quot;Running&quot; → &quot;Stopped&quot;</td><td>Check the service owner and intended startup mode. A stopped service may be intentional; investigate before restarting.</td></tr></tbody></table>
+<details><summary>Full evidence (JSON)</summary><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;timestamp&quot;: &quot;2026-10-03T06:36:54.702422+00:00&quot;,
+  &quot;status&quot;: &quot;drift&quot;,
+  &quot;summary&quot;: &quot;3 observed changes. Change is evidence, not proof of misconfiguration.&quot;,
+  &quot;host&quot;: &quot;LAB-PC-01&quot;,
+  &quot;before_timestamp&quot;: &quot;2026-10-02T06:00:00Z&quot;,
+  &quot;after_timestamp&quot;: &quot;2026-10-03T06:00:00Z&quot;,
+  &quot;findings&quot;: [
+    {
+      &quot;status&quot;: &quot;review&quot;,
+      &quot;item&quot;: &quot;dns/lab-adapter-guid/2&quot;,
+      &quot;evidence&quot;: &quot;changed: [\&quot;192.0.2.53\&quot;, \&quot;192.0.2.54\&quot;] → [\&quot;192.0.2.54\&quot;, \&quot;192.0.2.53\&quot;]&quot;,
+      &quot;next_step&quot;: &quot;Check whether resolver addresses and order match the intended network or VPN. Confirm against a change ticket before reverting.&quot;
+    },
+    {
+      &quot;status&quot;: &quot;review&quot;,
+      &quot;item&quot;: &quot;firewall/Private/enabled&quot;,
+      &quot;evidence&quot;: &quot;changed: \&quot;True\&quot; → \&quot;False\&quot;&quot;,
+      &quot;next_step&quot;: &quot;Review the intended profile policy and effective GPO. This snapshot covers profile enabled state, not individual firewall rules.&quot;
+    },
+    {
+      &quot;status&quot;: &quot;review&quot;,
+      &quot;item&quot;: &quot;services/Spooler/state&quot;,
+      &quot;evidence&quot;: &quot;changed: \&quot;Running\&quot; → \&quot;Stopped\&quot;&quot;,
+      &quot;next_step&quot;: &quot;Check the service owner and intended startup mode. A stopped service may be intentional; investigate before restarting.&quot;
+    }
+  ],
+  &quot;changes&quot;: [
+    {
+      &quot;section&quot;: &quot;dns&quot;,
+      &quot;item&quot;: &quot;lab-adapter-guid&quot;,
+      &quot;field_path&quot;: [
+        &quot;2&quot;
+      ],
+      &quot;kind&quot;: &quot;changed&quot;,
+      &quot;before&quot;: [
+        &quot;192.0.2.53&quot;,
+        &quot;192.0.2.54&quot;
+      ],
+      &quot;after&quot;: [
+        &quot;192.0.2.54&quot;,
+        &quot;192.0.2.53&quot;
+      ]
+    },
+    {
+      &quot;section&quot;: &quot;firewall&quot;,
+      &quot;item&quot;: &quot;Private&quot;,
+      &quot;field_path&quot;: [
+        &quot;enabled&quot;
+      ],
+      &quot;kind&quot;: &quot;changed&quot;,
+      &quot;before&quot;: &quot;True&quot;,
+      &quot;after&quot;: &quot;False&quot;
+    },
+    {
+      &quot;section&quot;: &quot;services&quot;,
+      &quot;item&quot;: &quot;Spooler&quot;,
+      &quot;field_path&quot;: [
+        &quot;state&quot;
+      ],
+      &quot;kind&quot;: &quot;changed&quot;,
+      &quot;before&quot;: &quot;Running&quot;,
+      &quot;after&quot;: &quot;Stopped&quot;
+    }
+  ],
+  &quot;collector_errors&quot;: {
+    &quot;before&quot;: [],
+    &quot;after&quot;: []
+  }
+}</pre></details>
+<p>Generated locally. Review evidence before making changes.</p></main></html>

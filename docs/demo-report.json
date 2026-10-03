@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "timestamp": "2026-10-03T06:36:54.702422+00:00",
+  "status": "drift",
+  "summary": "3 observed changes. Change is evidence, not proof of misconfiguration.",
+  "host": "LAB-PC-01",
+  "before_timestamp": "2026-10-02T06:00:00Z",
+  "after_timestamp": "2026-10-03T06:00:00Z",
+  "findings": [
+    {
+      "status": "review",
+      "item": "dns/lab-adapter-guid/2",
+      "evidence": "changed: [\"192.0.2.53\", \"192.0.2.54\"] → [\"192.0.2.54\", \"192.0.2.53\"]",
+      "next_step": "Check whether resolver addresses and order match the intended network or VPN. Confirm against a change ticket before reverting."
+    },
+    {
+      "status": "review",
+      "item": "firewall/Private/enabled",
+      "evidence": "changed: \"True\" → \"False\"",
+      "next_step": "Review the intended profile policy and effective GPO. This snapshot covers profile enabled state, not individual firewall rules."
+    },
+    {
+      "status": "review",
+      "item": "services/Spooler/state",
+      "evidence": "changed: \"Running\" → \"Stopped\"",
+      "next_step": "Check the service owner and intended startup mode. A stopped service may be intentional; investigate before restarting."
+    }
+  ],
+  "changes": [
+    {
+      "section": "dns",
+      "item": "lab-adapter-guid",
+      "field_path": [
+        "2"
+      ],
+      "kind": "changed",
+      "before": [
+        "192.0.2.53",
+        "192.0.2.54"
+      ],
+      "after": [
+        "192.0.2.54",
+        "192.0.2.53"
+      ]
+    },
+    {
+      "section": "firewall",
+      "item": "Private",
+      "field_path": [
+        "enabled"
+      ],
+      "kind": "changed",
+      "before": "True",
+      "after": "False"
+    },
+    {
+      "section": "services",
+      "item": "Spooler",
+      "field_path": [
+        "state"
+      ],
+      "kind": "changed",
+      "before": "Running",
+      "after": "Stopped"
+    }
+  ],
+  "collector_errors": {
+    "before": [],
+    "after": []
+  }
+}
