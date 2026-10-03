@@ -108,6 +108,7 @@ def main():
         p.error('Both --before and --after are required')
     try:
         result = compare(json.loads(args.before.read_text(encoding='utf-8-sig')), json.loads(args.after.read_text(encoding='utf-8-sig')))
+        if args.demo: result['demo'] = True
         report = write_report(result, args.output, 'Config Drift Watch')
         print(f"{result['status'].upper()}: {report}")
         return 0 if result['status'] == 'unchanged' else (2 if result['status'] == 'incomplete' else 1)

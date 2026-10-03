@@ -1,5 +1,16 @@
 # Config Drift Watch
 
+## Open it without commands (Windows)
+
+[**Download the Windows app**](https://github.com/thisisraihanm/config-drift-watch/releases/latest) → download **ConfigDriftWatch-Windows.zip** under Assets → **Extract All** → double-click **ConfigDriftWatch.exe**. Python is included.
+
+Click **Try a safe example** first. Then Click **Save current settings** while things work. Save again after a change. Choose the earlier and later saved files, then click **Compare saved settings**. You do not need to open or edit the saved files.
+
+[Step-by-step beginner guide](START-HERE.md). The screen and report explain the result in plain language. Detailed evidence remains available for IT.
+
+If you downloaded source code with **Code → Download ZIP**, Python 3.11+ with Tk is required; double-click **Start-Windows.cmd** after installing it.
+
+
 **Answer “what changed?” with a before/after report for a Windows endpoint.**
 
 After a VPN installation or a maintenance window, a laptop suddenly behaves differently. Instead of resetting everything, capture a known-good snapshot and compare it with the current settings. The report highlights changes worth checking against the intended configuration.
