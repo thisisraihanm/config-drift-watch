@@ -1,9 +1,7 @@
 import sys
 import json
-import json
 from pathlib import Path
 import subprocess
-import sys
 from config_drift_watch import compare, validate
 from desktop_ui import App, resource_root
 from friendly import UserInputError
@@ -26,7 +24,15 @@ def collect(destination):
         raise RuntimeError(completed.stderr.strip() or 'Windows could not save the settings snapshot.')
     return validate(json.loads(destination.read_text(encoding='utf-8-sig')))
 def make_app(window): return App(window, KIND, TITLE, demo, check, collect=collect)
-def extra_smoke(): pass
+def extra_smoke():
+    if sys.platform != 'win32': return
+    import tempfile
+    with tempfile.TemporaryDirectory() as directory:
+        snapshot = collect(Path(directory) / 'settings.json')
+        assert set(snapshot['coverage']) == {'interfaces', 'dns', 'firewall', 'services'}
+        result = compare(snapshot, snapshot)
+        expected = 'unchanged' if all(value == 'ok' for value in snapshot['coverage'].values()) else 'incomplete'
+        assert result['status'] == expected, 'Collected settings did not compare correctly'
 
 
 def self_test(result_path=None):
