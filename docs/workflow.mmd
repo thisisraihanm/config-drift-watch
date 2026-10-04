@@ -1,0 +1,10 @@
+flowchart TD
+    A["Load before and after snapshots"] --> B{"Valid schema, same host and platform?"}
+    B -->|No| C["Reject the comparison"]
+    B -->|Yes| D["Check section coverage and service scope"]
+    D --> E["Compare eligible sections; record gaps"]
+    E --> F{"Any collection or scope gaps?"}
+    F -->|Yes| G["Incomplete: retain other observed changes"]
+    F -->|No| H{"Any observed changes?"}
+    H -->|Yes| I["Drift: review against intended settings"]
+    H -->|No| J["Unchanged: checked settings match"]

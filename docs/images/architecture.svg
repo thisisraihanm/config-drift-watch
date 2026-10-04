@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="590" viewBox="0 0 1280 590" role="img" aria-labelledby="title desc">
+<title id="title">Config Drift Watch architecture</title>
+<desc id="desc">Inputs, processing and evidence outputs. The accompanying visual guide describes the complete workflow.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7893ab"/></marker></defs>
+<rect width="1280" height="590" rx="20" fill="#0c1b2b"/>
+<text x="60" y="55" fill="#ffc35c" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">WINDOWS CONFIGURATION</text>
+<text x="60" y="104" fill="#f2f6fb" font-family="Arial,sans-serif" font-size="38" font-weight="700">Config Drift Watch / how it works</text>
+<path d="M360 327.5 C400 327.5 395 225.0 435 225.0" fill="none" stroke="#7893ab" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M360 327.5 C400 327.5 395 405.0 435 405.0" fill="none" stroke="#7893ab" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M740 225.0 C780 225.0 810 230.0 850 230.0" fill="none" stroke="#7893ab" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M740 405.0 C780 405.0 810 230.0 850 230.0" fill="none" stroke="#7893ab" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M1030.0 290 L1030.0 350" fill="none" stroke="#7893ab" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="60" y="255" width="300" height="145" rx="12" fill="#142b40" stroke="#36516b"/>
+<rect x="60" y="272" width="4" height="111" rx="2" fill="#ffc35c"/>
+<text x="80" y="288" fill="#f2f6fb" font-family="Arial,sans-serif" font-size="23" font-weight="700">Windows collector</text>
+<text x="80" y="315" fill="#b9cbdd" font-family="Arial,sans-serif" font-size="16">Read-only PowerShell</text>
+<text x="80" y="338" fill="#b9cbdd" font-family="Arial,sans-serif" font-size="16">Interfaces · DNS</text>
+<text x="80" y="361" fill="#b9cbdd" font-family="Arial,sans-serif" font-size="16">Firewall · selected services</text>
+<rect x="435" y="170" width="305" height="110" rx="12" fill="#142b40" stroke="#36516b"/>
+<rect x="435" y="187" width="4" height="76" rx="2" fill="#ffc35c"/>
+<text x="455" y="203" fill="#f2f6fb" font-family="Arial,sans-serif" font-size="23" font-weight="700">Before snapshot</text>
+<text x="455" y="230" fill="#b9cbdd" font-family="Arial,sans-serif" font-size="16">Known-good settings</text>
+<text x="455" y="253" fill="#b9cbdd" font-family="Arial,sans-serif" font-size="16">Collection coverage</text>
+<rect x="435" y="350" width="305" height="110" rx="12" fill="#142b40" stroke="#36516b"/>
+<rect x="435" y="367" width="4" height="76" rx="2" fill="#ffc35c"/>
+<text x="455" y="383" fill="#f2f6fb" font-family="Arial,sans-serif" font-size="23" font-weight="700">After snapshot</text>
+<text x="455" y="410" fill="#b9cbdd" font-family="Arial,sans-serif" font-size="16">Later settings</text>
+<text x="455" y="433" fill="#b9cbdd" font-family="Arial,sans-serif" font-size="16">Collection coverage</text>
+<rect x="850" y="170" width="360" height="120" rx="12" fill="#142b40" stroke="#36516b"/>
+<rect x="850" y="187" width="4" height="86" rx="2" fill="#ffc35c"/>
+<text x="870" y="203" fill="#f2f6fb" font-family="Arial,sans-serif" font-size="23" font-weight="700">Comparison engine</text>
+<text x="870" y="230" fill="#b9cbdd" font-family="Arial,sans-serif" font-size="16">Same host and platform</text>
+<text x="870" y="253" fill="#b9cbdd" font-family="Arial,sans-serif" font-size="16">Compare collected sections only</text>
+<rect x="850" y="350" width="360" height="110" rx="12" fill="#142b40" stroke="#36516b"/>
+<rect x="850" y="367" width="4" height="76" rx="2" fill="#ffc35c"/>
+<text x="870" y="383" fill="#f2f6fb" font-family="Arial,sans-serif" font-size="23" font-weight="700">HTML + JSON report</text>
+<text x="870" y="410" fill="#b9cbdd" font-family="Arial,sans-serif" font-size="16">Before / after differences</text>
+<text x="870" y="433" fill="#b9cbdd" font-family="Arial,sans-serif" font-size="16">Collection gaps stay explicit</text>
+<text x="60" y="549" fill="#ffc35c" font-family="Arial,sans-serif" font-size="17">NO AUTOMATIC REPAIR  •  A changed setting is a finding to review, not proof of a fault</text></svg>
